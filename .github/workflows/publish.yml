@@ -57,8 +57,9 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_CLIENT_ID }}
-          password: ${{ secrets.DOCKERHUB_CLIENT_SECRET }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: set-tag-suffix
         id: tag_suffix
         uses: actions/github-script@v7
