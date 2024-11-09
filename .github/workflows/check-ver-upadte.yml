@@ -24,6 +24,7 @@ jobs:
       - name: Check Futu OpenD Version
         run: |
           node script/check_version.js
+
       - name: Commit and push
         run: |
           git config --global user.name "github-actions[bot]"
@@ -37,3 +38,5 @@ jobs:
             # create a pull request
             gh pr create --title "Update Futu OpenD version" --body "Update Futu OpenD version"
           fi
+        env:
+          GH_TOKEN: ${{ github.token }}

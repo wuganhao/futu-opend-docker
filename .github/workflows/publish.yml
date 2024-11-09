@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 20
     needs: extract-version
     env:
-      IMAGE_NAME: manhinhang/futu-opend-docker
+      IMAGE_NAME: futu-opend-docker
       BETA_VERSION: ${{ needs.extract-version.outputs.beta_version }}
       STABLE_VERSION: ${{ needs.extract-version.outputs.stable_version }}
     steps:
